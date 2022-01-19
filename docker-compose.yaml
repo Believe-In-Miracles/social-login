@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  api:
+    container_name: googleLogin_api
+    restart: on-failure
+    build: .
+    volumes:
+      - /tmp/googleLogin
+    ports:
+      - "8000:8000"
+    command: >
+      sh -c "php artisan serve"
